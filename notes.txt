@@ -1,0 +1,15 @@
+Config files
+/etc/rabbitmq/rabbitmq.conf
+/etc/rabbitmq/rabbitmq-env.conf
+
+Log files
+/var/log/rabbitmq
+
+Data files (key-value)
+/var/lib/rabbitmq/mnesia
+    $DB_ROOT/<nodename>/ {Mnesia DB}
+    $DB_ROOT/<nodename>.pid {pidfile}
+    $DB_ROOT/<nodename>.plugins-expand/ {generated launcher scripts}
+
+
+
