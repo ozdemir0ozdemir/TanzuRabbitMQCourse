@@ -1,0 +1,14 @@
+version: 3
+
+tasks:
+  start:
+    cmd: docker compose -f ./compose.yml up -d
+
+  stop:
+    cmd: docker compose -f ./compose.yml down
+
+  restart:
+    cmds:
+      - task: stop
+      - cmd: timeout 1
+      - task: start
