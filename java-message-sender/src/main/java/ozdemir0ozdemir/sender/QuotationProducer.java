@@ -4,6 +4,9 @@ import ozdemir0ozdemir.sender.service.QuotationService;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
+import sun.misc.Signal;
+
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class QuotationProducer {
     private static QuotationService quotationService =
@@ -17,7 +20,6 @@ public class QuotationProducer {
         Connection connection = factory.newConnection();
         Channel channel = connection.createChannel();
 
-
         while(true) {
             letsWait(1000);
             String quotation = quotationService.next();
@@ -28,6 +30,9 @@ public class QuotationProducer {
                     null,
                     quotation.getBytes());
         }
+
+//        channel.close();
+//        connection.close();
     }
 
     private static void letsWait(int duration) throws Exception {
