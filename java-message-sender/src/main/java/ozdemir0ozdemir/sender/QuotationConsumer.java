@@ -17,8 +17,6 @@ public class QuotationConsumer {
                 true,
                 consumer(channel));
 
-
-
 //        channel.close();
 //        connection.close();
 

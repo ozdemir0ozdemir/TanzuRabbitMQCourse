@@ -1,12 +1,9 @@
 package ozdemir0ozdemir.sender;
 
-import ozdemir0ozdemir.sender.service.QuotationService;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
-import sun.misc.Signal;
-
-import java.util.concurrent.atomic.AtomicBoolean;
+import ozdemir0ozdemir.sender.service.QuotationService;
 
 public class QuotationProducer {
     private static QuotationService quotationService =
